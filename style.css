@@ -1,0 +1,289 @@
+/* CoastalEase — final (with CSS modals)
+   Palette:
+   Regal Blue:  #1E3765
+   Pastel Blue: #B0C6D4
+   White Lilac: #F8F9FC
+   Black:       #000000
+*/
+
+/* Reset & base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --regal: #1E3765;
+  --pastel: #B0C6D4;
+  --white-lilac: #F8F9FC;
+  --black: #000000;
+  --container: 1200px;
+}
+html { scroll-behavior: smooth; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: var(--white-lilac); color: var(--black); }
+.container { width: 92%; max-width: var(--container); margin: 0 auto; }
+
+/* Header */
+.site-header { position: sticky; top: 0; z-index: 60; background: linear-gradient(180deg, rgba(30,55,101,0.98), rgba(30,55,101,0.98)); box-shadow: 0 2px 6px rgba(0,0,0,0.12); }
+.header-inner { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:0.9rem 0; }
+.brand { display:flex; align-items:center; gap:0.6rem; color:#fff; }
+.logo-mark { width:44px; height:44px; border-radius:8px; background: linear-gradient(135deg,var(--pastel), #fff); display:flex; align-items:center; justify-content:center; font-size:20px; box-shadow:0 2px 6px rgba(0,0,0,0.12); }
+.logo-text .brand-name{ font-weight:700; font-size:1.05rem; color:#fff; }
+.logo-text .brand-sub{ display:block; font-size:0.68rem; opacity:0.9; margin-top:2px; color:#fff; }
+
+/* nav list */
+.nav ul { list-style:none; display:flex; gap:1rem; align-items:center; }
+.nav a { color:#fff; text-decoration:none; padding:6px 8px; font-weight:600; transition: color .18s; }
+.nav a:hover { color: var(--pastel); }
+
+/* CTA */
+.btn-cta { background: var(--pastel); color: var(--regal); text-decoration:none; padding:8px 14px; border-radius:20px; font-weight:700; }
+
+/* Hamburger Menu (Centered and Balanced X Animation) */
+.nav-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-left: 12px;
+  background: #1E3765; /* Regal Blue */
+  transition: 0.3s ease;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 22px;
+  background: #F8F9FC; /* White Lilac */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* X animation — fixed center alignment */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(3px, 3px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(3px, -3px);
+}
+
+/* Show hamburger only on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Optional: show hamburger on small screens */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Hero */
+.hero { min-height: 78vh; display:flex; align-items:center; position:relative; overflow:hidden; margin-top:0; }
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80");
+  background-size: cover; background-position:center;
+  filter: contrast(1.02) saturate(1.05);
+  transform: scale(1.02);
+  z-index:-2;
+}
+.hero-overlay { position:absolute; inset:0; background: linear-gradient(180deg, rgba(30,55,101,0.55), rgba(30,55,101,0.5)); z-index:0; }
+.hero-content { position:relative; z-index:1; text-align:center; width:100%; padding:4rem 1rem; color:#fff; }
+.hero-content h1 { font-size:2.6rem; margin-bottom:0.6rem; letter-spacing:0.6px; }
+.hero-content p { font-size:1.05rem; margin-bottom:1.2rem; opacity:0.95; max-width:900px; margin-left:auto; margin-right:auto; }
+.hero-actions { display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap; }
+
+/* buttons */
+.btn { display:inline-block; border-radius:28px; padding:10px 18px; font-weight:700; text-decoration:none; }
+.btn-primary { background: var(--pastel); color: var(--regal); }
+.btn-secondary { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.12); }
+
+/* ad banner */
+.ad-banner { padding: 1.2rem 0; }
+.ad-inner img { width:100%; border-radius:10px; display:block; }
+
+/* sections */
+.section { padding:3.2rem 0; background: transparent; }
+.section .section-title { color: var(--regal); text-align:center; font-size:1.6rem; margin-bottom:1rem; font-weight:700; }
+
+/* featured shelf */
+.featured .carousel-shelf{ display:flex; gap:1rem; justify-content:center; align-items:stretch; flex-wrap:wrap; margin-top:1rem; }
+.offer-card { width: 320px; background: #fff; border-radius:12px; overflow:hidden; box-shadow: 0 10px 20px rgba(30,55,101,0.08); display:flex; flex-direction:column; }
+.offer-card .image { height:170px; background-size:cover; background-position:center; }
+.card-body { padding:14px 16px; display:flex; flex-direction:column; gap:8px; }
+.card-body h3 { color:var(--regal); font-size:1.05rem; }
+.card-body .meta { font-size:0.9rem; color:#444; opacity:0.95; }
+.card-footer { display:flex; justify-content:space-between; align-items:center; margin-top:8px; }
+.price { background: linear-gradient(90deg, var(--pastel), #e6f1f6); color:var(--regal); font-weight:800; padding:6px 10px; border-radius:10px; font-size:0.95rem; }
+.link-book { color:var(--regal); text-decoration:none; font-weight:700; }
+
+/* explore grid */
+.grid-cards { display:grid; grid-template-columns: repeat(4, 1fr); gap:1rem; align-items:stretch; margin-top:1rem; }
+.grid-card { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 8px 18px rgba(30,55,101,0.06); display:flex; flex-direction:column; }
+.g-image { height:140px; background-size:cover; background-position:center; }
+.g-body { padding:12px; display:flex; flex-direction:column; gap:8px; }
+.g-meta { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-top:auto; }
+.small-btn { background: var(--regal); color:#fff; padding:7px 10px; border-radius:8px; text-decoration:none; font-weight:600; }
+.tag { background: #f1f6f9; color:var(--regal); padding:6px 8px; border-radius:8px; font-weight:700; font-size:0.9rem; }
+
+/* see all */
+.see-all { text-align:center; margin-top:1.2rem; }
+.btn-outline { background:transparent; border:2px solid var(--regal); color:var(--regal); padding:10px 18px; border-radius:28px; text-decoration:none; }
+
+/* why */
+.why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1rem; }
+.why-card { background: linear-gradient(180deg, rgba(176,198,212,0.12), rgba(248,249,252,0.4)); padding:18px; border-radius:10px; text-align:center; min-height:140px; display:flex; flex-direction:column; gap:10px; align-items:center; justify-content:center; }
+.why-icon { font-size:1.6rem; }
+
+/* posts + reviews */
+.posts-inner { display:grid; grid-template-columns: 2fr 1fr; gap:1.2rem; align-items:start; margin-top:1rem; }
+.post-card { background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 8px 18px rgba(30,55,101,0.06); display:flex; flex-direction:column; }
+.post-image { height:160px; background-size:cover; background-position:center; }
+.post-body { padding:14px; }
+.read-more { color:var(--regal); text-decoration:none; font-weight:700; }
+
+/* reviews */
+.reviews-aside { padding-left:1rem; }
+.review-list { display:flex; flex-direction:column; gap:10px; margin-top:10px; }
+.review-item { background: #fff; border-radius:10px; padding:10px; display:flex; gap:12px; align-items:flex-start; box-shadow:0 6px 14px rgba(30,55,101,0.04); }
+.avatar { width:44px; height:44px; border-radius:50%; background:var(--pastel); color:var(--regal); display:flex; align-items:center; justify-content:center; font-weight:700; }
+
+/* info */
+.info-grid { display:flex; gap:1rem; justify-content:center; align-items:flex-start; margin-top:1rem; flex-wrap:wrap; }
+.info-card { background:#fff; padding:16px; border-radius:10px; box-shadow:0 8px 18px rgba(30,55,101,0.06); min-width:220px; }
+
+/* newsletter */
+.newsletter-inner { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:16px; background: linear-gradient(90deg, rgba(30,55,101,0.04), rgba(176,198,212,0.06)); border-radius:10px; margin-top:1rem; }
+.nl-left h2 { margin-bottom:6px; color:var(--regal); }
+.nl-form { display:flex; gap:8px; align-items:center; }
+.nl-form input[type="email"] { padding:10px 12px; border-radius:8px; border:1px solid rgba(30,55,101,0.08); min-width:220px; }
+.nl-form button { padding:10px 14px; border-radius:8px; border:none; background:var(--regal); color:#fff; font-weight:700; cursor:pointer; }
+
+/* footer */
+.footer { background: var(--regal); color: var(--white-lilac); padding:2rem 0 1.2rem; margin-top:1.6rem; }
+.footer-inner { display:flex; gap:2rem; justify-content:space-between; align-items:flex-start; }
+.footer-col { flex:1; min-width:160px; }
+.footer-col h4 { margin-bottom:8px; color:#fff; }
+.footer-links { list-style:none; margin-top:6px; }
+.footer-links a { color:#fff; text-decoration:none; opacity:0.95; display:block; margin:6px 0; }
+.copyright { text-align:center; padding-top:12px; opacity:0.95; }
+
+/* ----------------------------
+   CSS MODALS (pure CSS using :target)
+   Modal container covers viewport; hidden by default.
+   When its id matches fragment (e.g., #post-modal), :target styles show it.
+   ---------------------------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.45);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+  z-index: 200;
+}
+
+/* when target, show */
+.modal:target {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* modal panel */
+.modal-panel {
+  width: 100%;
+  max-width: 720px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 18px 40px rgba(30,55,101,0.18);
+  position: relative;
+  color: #111;
+}
+
+/* close button */
+.modal-close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  text-decoration: none;
+  font-size: 26px;
+  color: #333;
+  padding: 6px 8px;
+  line-height: 1;
+}
+
+/* modal content styling */
+.modal-panel h3 { color: var(--regal); margin-bottom: 10px; }
+.modal-panel p { line-height:1.5; margin-bottom: 12px; }
+.booking-form label { display:block; margin-bottom:8px; font-weight:600; color:#333; }
+.booking-form input, .booking-form select { width:100%; padding:10px 12px; margin-top:6px; border-radius:8px; border:1px solid rgba(30,55,101,0.08); }
+.modal-actions { display:flex; gap:10px; margin-top:12px; }
+
+/* small responsive tweaks for modal */
+@media (max-width:720px) {
+  .modal-panel { padding: 16px; max-width: 520px; }
+}
+
+/* Responsive layout grid changes */
+@media (max-width:1100px) {
+  .grid-cards { grid-template-columns: repeat(2,1fr); }
+  .posts-inner { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction:column; gap:1rem; }
+  .info-grid { flex-direction:column; align-items:stretch; }
+}
+@media (max-width:800px) {
+  /* mobile nav */
+  .nav ul { display:none; }
+  .btn-cta { display:none; }
+  .hamburger { display:flex; align-items:center; justify-content:center; }
+  .nav-toggle:checked ~ .nav ul {
+    display:flex; flex-direction:column; position:absolute; right:12px; top:64px;
+    background: linear-gradient(180deg, rgba(30,55,101,0.98), rgba(30,55,101,0.98));
+    padding:10px; border-radius:8px; box-shadow:0 8px 18px rgba(0,0,0,0.18); width:180px;
+  }
+  .nav-toggle:checked + .nav + .btn-cta + .hamburger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav-toggle:checked + .nav + .btn-cta + .hamburger span:nth-child(2) { opacity:0; }
+  .nav-toggle:checked + .nav + .btn-cta + .hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  .hero { min-height:55vh; }
+  .hero-content h1 { font-size:1.8rem; }
+  .grid-cards { grid-template-columns:1fr; }
+  .why-grid { grid-template-columns:1fr; }
+  .newsletter-inner { flex-direction:column; align-items:stretch; }
+}
+@media (max-width:420px) {
+  .hero-content p { font-size:0.95rem; }
+  .offer-card { width:100%; }
+  .logo-text .brand-sub { display:none; }
+}
+
+/* accessible focus */
+a:focus, button:focus, input:focus, select:focus { outline: 3px solid rgba(30,55,101,0.12); outline-offset:3px; }
+
+/* small polish for anchors to avoid big jumps when opening modals (optional) */
+:target { scroll-margin-top: 80px; }
+
