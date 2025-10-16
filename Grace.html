@@ -1,57 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-    <title>My Comfort Food</title>
-      <link rel = "stylesheet" href = "assets/style.css">
-      </head>
-      <body>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CoastalEase | Dalaguete Beach Park</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-      <div>
-        <div class = img-container></div>
-          <img src="mango.jpg" alt="Mago Graham Bar" class = "mango-img">
-            <h1 id="h1">My Comfort food is Mango Graham Bar</h1>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo-mark">🌊</div>
+        <div class="logo-text">
+          <span class="brand-name">CoastalEase</span>
+          <small class="brand-sub">Dalaguete Beach Park</small>
+        </div>
+      </div>
 
-              <div>
-                  <h2 id = "h2">Creamy Mango Graham Bar Recipe</h2>
-                    </div>
+      <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-label="menu toggle" />
+      <nav class="nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#rentals">Rentals</a></li>
+          <li><a href="#posts">Posts</a></li>
+          <li><a href="#info">Info</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-                      <div>
-                          <h3 id = "h3">Ingredients</h3>
-                            <ul>
-                                <li>410 ml Kremdensada (sweetened condensed milk), chilled overnight</li>
-                                    <li>125 ml all-purpose cream, chilled</li>
-                                        <li>24 pieces graham crackers</li>
-                                            <li>3 small sweet mangoes, diced into cubes</li>
-                                              </ul>
-                                                </div>
+      <a class="btn-cta" href="#book-modal">Book Now</a>
 
-                                                  <div>
-                                                      <h3 id = "h3">Preparation Steps</h3>
-                                                        <ol>
-                                                            <li>In a large mixing bowl, combine the chilled Kremdensada and all-purpose cream.</li>
-                                                                <li>Beat the mixture on high speed until it doubles in volume—this creates a light and fluffy cream base.</li>
-                                                                    <li>Purchase or prepare a suitable container; for example, a 3-liter Graham Bar container works well for 12 bars.</li>
-                                                                        <li>Arrange a layer of graham crackers evenly at the bottom of the container.</li>
-                                                                            <li>Pour half of the whipped cream mixture over the crackers and smooth it out with a spatula.</li>
-                                                                                <li>Distribute the diced mango cubes evenly over the cream layer.</li>
-                                                                                    <li>Pour in the remaining whipped cream and flatten it to create an even layer.</li>
-                                                                                        <li>Add another layer of graham crackers on top.</li>
-                                                                                            <li>Cover the container with a lid and place it in the freezer overnight to set firmly.</li>
-                                                                                                <li>Once frozen, unmold the dessert and slice it into individual bars.</li>
-                                                                                                    <li>Wrap each bar in foil—fold and seal both ends to keep them fresh.</li>
+      <label for="nav-toggle" class="hamburger" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+  </header>
 
-                                                                                                      </ol>
-                                                                                                        </div>
-                                                                                                          
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Discover Dalaguete Beach Park</h1>
+      <p>Tables • Kayaks • Event Spaces — easy online booking for your perfect seaside day.</p>
+      <div class="hero-actions">
+        <a href="#featured" class="btn btn-primary">See Hot Picks</a>
+        <a href="#rentals" class="btn btn-secondary">Explore All</a>
+      </div>
+    </div>
+  </section>
 
-                                                                                                            <footer>
-                                                                                                                <p>Mary Grace Sombilon, BSIT 2A Algorithm</p>
-                                                                                                                  </footer>
+  <!-- Ad banner -->
+  <section class="ad-banner">
+    <div class="container">
+      <div class="ad-inner">
+        <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1600&q=60"
+             alt="promo banner" />
+      </div>
+    </div>
+  </section>
 
-                                                                                                                  </div>
-                                                                                                                    
-                                                                                                                    </body>
-                                                                                                                    </html>
+  <!-- Featured / Hot Sellers -->
+  <section id="featured" class="section featured">
+    <div class="container">
+      <h2 class="section-title">Hot Sellers</h2>
+      <div class="carousel-shelf">
+        <article class="offer-card">
+          <div class="image" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80')" role="img" aria-label="sunset table"></div>
+          <div class="card-body">
+            <h3>Sunset Table</h3>
+            <p class="meta">Beachfront table for up to 6 • Shade included</p>
+            <div class="card-footer">
+              <span class="price">₱350 · 3 hrs</span>
+              <a href="#book-modal" class="link-book">Reserve</a>
+            </div>
+          </div>
+        </article>
 
-                                                                                                                    
+        <article class="offer-card">
+          <div class="image" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80')" role="img" aria-label="single kayak"></div>
+          <div class="card-body">
+            <h3>Single Kayak</h3>
+            <p class="meta">Stable kayak with life vest • Guided route available</p>
+            <div class="card-footer">
+              <span class="price">₱250 · hr</span>
+              <a href="#book-modal" class="link-book">Rent</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="offer-card">
+          <div class="image" style="background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80')" role="img" aria-label="event area"></div>
+          <div class="card-body">
+            <h3>Beach Event Area</h3>
+            <p class="meta">Open-air area for up to 80 guests • Décor packages available</p>
+            <div class="card-footer">
+              <span class="price">₱4,000 · day</span>
+              <a href="#book-modal" class="link-book">Book</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rentals (detailed) -->
+  <section id="rentals" class="section explore">
+    <div class="container">
+      <h2 class="section-title">Our Rentals</h2>
+      <div class="grid-cards">
+        <article class="grid-card">
+          <div class="g-image" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=60')"></div>
+          <div class="g-body">
+            <h4>Table Reservation</h4>
+            <p>Comfortable tables with views • Add food packages</p>
+            <div class="g-meta">
+              <span class="tag">From ₱350</span>
+              <a href="#book-modal" class="small-btn">Book</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="grid-card">
+          <div class="g-image" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1000&q=60')"></div>
+          <div class="g-body">
+            <h4>Kayak Rental</h4>
+            <p>Single & tandem kayaks • Safety gear included</p>
+            <div class="g-meta">
+              <span class="tag">From ₱250</span>
+              <a href="#book-modal" class="small-btn">Rent</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="grid-card">
+          <div class="g-image" style="background-image:url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1000&q=60')"></div>
+          <div class="g-body">
+            <h4>Island Picnic</h4>
+            <p>Short boat trip & picnic set • Family-friendly</p>
+            <div class="g-meta">
+              <span class="tag">From ₱800</span>
+              <a href="#book-modal" class="small-btn">Reserve</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="grid-card">
+          <div class="g-image" style="background-image:url('https://images.unsplash.com/photo-1476610182048-b716b8518aae?auto=format&fit=crop&w=1000&q=60')"></div>
+          <div class="g-body">
+            <h4>Event Packages</h4>
+            <p>Sound, lights, catering add-ons • Custom quotes</p>
+            <div class="g-meta">
+              <span class="tag">Contact for rates</span>
+              <a href="#book-modal" class="small-btn">Inquire</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Book -->
+  <section id="why" class="section why">
+    <div class="container">
+      <h2 class="section-title">Why book with us?</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">✔️</div>
+          <h4>Easy Booking</h4>
+          <p>Fast, secure online booking and clear pricing.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🏝️</div>
+          <h4>Hand-Picked Spots</h4>
+          <p>We choose the best beachside locations and setups.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">💬</div>
+          <h4>Local Customer Care</h4>
+          <p>Friendly on-site staff and quick assistance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Post + Reviews -->
+  <section id="posts" class="section posts">
+    <div class="container posts-inner">
+      <div class="post-left">
+        <h3>Latest Post</h3>
+        <article class="post-card">
+          <div class="post-image" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80')"></div>
+          <div class="post-body">
+            <h4>5 Tips for a Perfect Beach Day</h4>
+            <p>Quick tips to enjoy Dalaguete Beach Park — safe paddling, sunset seating, and packing smart.</p>
+            <!-- Read more triggers modal via anchor to fragment -->
+            <a href="#post-modal" class="read-more">Read more</a>
+          </div>
+        </article>
+      </div>
+
+      <aside class="reviews-aside">
+        <h3>Customer Reviews</h3>
+        <div class="review-list">
+          <div class="review-item">
+            <div class="avatar">A</div>
+            <div class="rv-body">
+              <p class="rv-text">“Booking was smooth and the staff were helpful. Amazing sunset!”</p>
+              <small class="rv-name">— Anna G., Cebu</small>
+            </div>
+          </div>
+
+          <div class="review-item">
+            <div class="avatar">C</div>
+            <div class="rv-body">
+              <p class="rv-text">“Kayaking was safe and fun. Kids loved it.”</p>
+              <small class="rv-name">— Carlo M., Dalaguete</small>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Info / About (entrance fees & walk-ins) -->
+  <section id="info" class="section info">
+    <div class="container">
+      <h2 class="section-title">Visitor Info</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h4>Entrance Fee</h4>
+          <ul>
+            <li>Adult: ₱30</li>
+            <li>Children (6-12): ₱15</li>
+            <li>Children (0-5): Free</li>
+            <li>PWD / Senior Citizen: Free (present valid ID)</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h4>Walk-ins</h4>
+          <p>Walk-ins are welcome subject to availability. We recommend reservations for weekends and holidays to secure your spot.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section newsletter">
+    <div class="container newsletter-inner">
+      <div class="nl-left">
+        <h2>Get your FREE eGuide to Dalaguete</h2>
+        <p>Tips, best spots, and discounts for first-time visitors.</p>
+      </div>
+      <form class="nl-form" action="#" method="post" onsubmit="return false;">
+        <input type="email" placeholder="Your email" aria-label="email" required />
+        <button class="btn btn-primary" type="submit">Get Guide</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contact + Footer -->
+  <footer id="contact" class="footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Dalaguete Beach Park, Cebu<br/>Phone: (032) 000-0000<br/>Email: info@coastalease.com</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#featured">Featured</a></li>
+          <li><a href="#rentals">Rentals</a></li>
+          <li><a href="#info">Info</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <p>Facebook • Instagram • Maps</p>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      <small>© 2025 CoastalEase | Dalaguete Beach Park • All rights reserved</small>
+    </div>
+  </footer>
+
+  <!-- ========== MODALS (CSS only via :target) ========== -->
+
+  <!-- Post modal -->
+  <div id="post-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="post-modal-title">
+    <div class="modal-panel">
+      <a href="#posts" class="modal-close" aria-label="close">&times;</a>
+      <h3 id="post-modal-title">5 Tips for a Perfect Beach Day</h3>
+      <p>
+        Plan for the sun and tides: arrive early for calm waters, secure a sunset table for the view,
+        bring reef-safe sunscreen, pack light snacks and water, and follow local safety instructions.
+        For kayaking, always wear a life vest and check weather updates. Enjoy local bites and support
+        small vendors when you can.
+      </p>
+      <p><strong>Want to book a table or kayak now?</strong> Use the Book buttons on the site or <a href="#book-modal">click here</a>.</p>
+    </div>
+  </div>
+
+  <!-- Booking modal (form-like placeholder) -->
+  <div id="book-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="book-modal-title">
+    <div class="modal-panel">
+      <a href="#rentals" class="modal-close" aria-label="close">&times;</a>
+      <h3 id="book-modal-title">Book a Rental</h3>
+      <p>Please confirm your booking details below. (This is a demo — no backend.)</p>
+
+      <!-- simple fields (no real submission) -->
+      <form class="booking-form" action="#" method="post" onsubmit="return false;">
+        <label>
+          Booking type
+          <select required>
+            <option>Sunset Table (₱350 · 3 hrs)</option>
+            <option>Single Kayak (₱250 · hr)</option>
+            <option>Beach Event Area (₱4,000 · day)</option>
+          </select>
+        </label>
+
+        <label>
+          Name
+          <input type="text" placeholder="Your name" required />
+        </label>
+
+        <label>
+          Contact (email or phone)
+          <input type="text" placeholder="Email or phone" required />
+        </label>
+
+        <div class="modal-actions">
+          <!-- Confirm goes to thank-you modal using fragment -->
+          <a class="btn btn-primary" href="#thanks-modal">Confirm Booking</a>
+          <a class="btn btn-secondary" href="#rentals">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Thank you modal (after confirm) -->
+  <div id="thanks-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="thanks-modal-title">
+    <div class="modal-panel">
+      <a href="#rentals" class="modal-close" aria-label="close">&times;</a>
+      <h3 id="thanks-modal-title">Thank you!</h3>
+      <p>We’ve received your booking request. Our team will contact you soon to confirm details. See you at Dalaguete Beach Park!</p>
+      <a class="btn btn-primary" href="#home">Back to Home</a>
+    </div>
+  </div>
+
+</body>
+</html>
